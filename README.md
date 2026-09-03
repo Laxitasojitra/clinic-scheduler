@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Clinic Appointment Scheduling
 
 Multi-provider clinic scheduling app. Front-desk staff manage availability and bookings;
@@ -34,3 +35,6 @@ npm run dev
 ```
 
 See `docs/` for architecture, schema, decisions, plan, and AI usage notes.
+=======
+# clinic-scheduler
+>>>>>>> 2f9b2e15c3814482f05430b4f03f67eb9f8eeae3
