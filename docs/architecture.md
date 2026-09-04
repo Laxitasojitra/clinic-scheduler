@@ -1,5 +1,6 @@
 # Architecture
 
+<<<<<<< HEAD
 ## Moving pieces and how they talk to each other
 
 - **Frontend**: a single HTML page (`app/static/index.html`) with vanilla JavaScript
@@ -47,3 +48,11 @@ via the `DATABASE_URL` environment variable.
   assessment app; not something I'd ship in a real product without a refresh mechanism.
 - **Recurring appointments, reminders, waitlists, room/equipment assignment** — all explicitly
   listed as optional stretch goals in the brief, not attempted given the time available.
+=======
+Answer each of these, in your own words, once the system has taken real shape.
+
+- What are the moving pieces, and how do they talk to each other?
+- Where does each piece run?
+- What is the request path for one representative user action, end to end?
+- What did you decide *not* to build, and why?
+>>>>>>> 8df9d12187793dd9f3eeda5aadd288ed11a34f98

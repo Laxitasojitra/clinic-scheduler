@@ -6,7 +6,11 @@ from sqlalchemy import (
     Column, String, Date, Time, Integer, ForeignKey, DateTime,
     Enum, Text, Boolean, UniqueConstraint
 )
+<<<<<<< HEAD
 
+=======
+from sqlalchemy.dialects.postgresql import UUID
+>>>>>>> 8df9d12187793dd9f3eeda5aadd288ed11a34f98
 from sqlalchemy.orm import relationship
 
 from app.database import Base
@@ -34,7 +38,11 @@ class SlotStatus(str, enum.Enum):
 class User(Base):
     __tablename__ = "users"
 
+<<<<<<< HEAD
     id = Column(String(36), primary_key=True, default=gen_uuid)
+=======
+    id = Column(UUID(as_uuid=False), primary_key=True, default=gen_uuid)
+>>>>>>> 8df9d12187793dd9f3eeda5aadd288ed11a34f98
     email = Column(String, unique=True, nullable=False, index=True)
     password_hash = Column(String, nullable=False)
     full_name = Column(String, nullable=False)
@@ -49,8 +57,13 @@ class Slot(Base):
     """
     __tablename__ = "slots"
 
+<<<<<<< HEAD
     id = Column(String(36), primary_key=True, default=gen_uuid)
     provider_id = Column(String(36), ForeignKey("users.id"), nullable=False)
+=======
+    id = Column(UUID(as_uuid=False), primary_key=True, default=gen_uuid)
+    provider_id = Column(UUID(as_uuid=False), ForeignKey("users.id"), nullable=False)
+>>>>>>> 8df9d12187793dd9f3eeda5aadd288ed11a34f98
     date = Column(Date, nullable=False)
     start_time = Column(Time, nullable=False)
     duration_minutes = Column(Integer, nullable=False)
@@ -62,7 +75,11 @@ class Slot(Base):
     cancellation_reason = Column(Text, nullable=True)
 
     archived_at = Column(DateTime, nullable=True)
+<<<<<<< HEAD
     created_by = Column(String(36), ForeignKey("users.id"), nullable=False)
+=======
+    created_by = Column(UUID(as_uuid=False), ForeignKey("users.id"), nullable=False)
+>>>>>>> 8df9d12187793dd9f3eeda5aadd288ed11a34f98
     created_at = Column(DateTime, default=datetime.utcnow)
     updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 
@@ -77,9 +94,15 @@ class SupportingProvider(Base):
     a provider can support many appointments."""
     __tablename__ = "supporting_providers"
 
+<<<<<<< HEAD
     id = Column(String(36), primary_key=True, default=gen_uuid)
     slot_id = Column(String(36), ForeignKey("slots.id"), nullable=False)
     provider_id = Column(String(36), ForeignKey("users.id"), nullable=False)
+=======
+    id = Column(UUID(as_uuid=False), primary_key=True, default=gen_uuid)
+    slot_id = Column(UUID(as_uuid=False), ForeignKey("slots.id"), nullable=False)
+    provider_id = Column(UUID(as_uuid=False), ForeignKey("users.id"), nullable=False)
+>>>>>>> 8df9d12187793dd9f3eeda5aadd288ed11a34f98
     added_at = Column(DateTime, default=datetime.utcnow)
     removed_at = Column(DateTime, nullable=True)  # soft-remove, keeps history
 
@@ -92,9 +115,15 @@ class SupportingProvider(Base):
 class VisitNote(Base):
     __tablename__ = "visit_notes"
 
+<<<<<<< HEAD
     id = Column(String(36), primary_key=True, default=gen_uuid)
     slot_id = Column(String(36), ForeignKey("slots.id"), nullable=False)
     provider_id = Column(String(36), ForeignKey("users.id"), nullable=False)
+=======
+    id = Column(UUID(as_uuid=False), primary_key=True, default=gen_uuid)
+    slot_id = Column(UUID(as_uuid=False), ForeignKey("slots.id"), nullable=False)
+    provider_id = Column(UUID(as_uuid=False), ForeignKey("users.id"), nullable=False)
+>>>>>>> 8df9d12187793dd9f3eeda5aadd288ed11a34f98
     content = Column(Text, nullable=False)
     created_at = Column(DateTime, default=datetime.utcnow)
     updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
@@ -108,13 +137,22 @@ class AuditEvent(Base):
     No update/delete route will ever be exposed for this table."""
     __tablename__ = "audit_events"
 
+<<<<<<< HEAD
     id = Column(String(36), primary_key=True, default=gen_uuid)
     slot_id = Column(String(36), ForeignKey("slots.id"), nullable=False)
+=======
+    id = Column(UUID(as_uuid=False), primary_key=True, default=gen_uuid)
+    slot_id = Column(UUID(as_uuid=False), ForeignKey("slots.id"), nullable=False)
+>>>>>>> 8df9d12187793dd9f3eeda5aadd288ed11a34f98
     event_type = Column(String, nullable=False)  # 'status_change' | 'support_added' | 'support_removed' | 'cancelled'
     old_value = Column(String, nullable=True)
     new_value = Column(String, nullable=True)
     reason = Column(Text, nullable=True)
+<<<<<<< HEAD
     actor_id = Column(String(36), ForeignKey("users.id"), nullable=False)
+=======
+    actor_id = Column(UUID(as_uuid=False), ForeignKey("users.id"), nullable=False)
+>>>>>>> 8df9d12187793dd9f3eeda5aadd288ed11a34f98
     created_at = Column(DateTime, default=datetime.utcnow)
 
     slot = relationship("Slot", back_populates="audit_events")
@@ -124,7 +162,13 @@ class AuditEvent(Base):
 class AlertDismissal(Base):
     __tablename__ = "alert_dismissals"
 
+<<<<<<< HEAD
     id = Column(String(36), primary_key=True, default=gen_uuid)
     slot_id = Column(String(36), ForeignKey("slots.id"), nullable=False)
     dismissed_by = Column(String(36), ForeignKey("users.id"), nullable=False)
+=======
+    id = Column(UUID(as_uuid=False), primary_key=True, default=gen_uuid)
+    slot_id = Column(UUID(as_uuid=False), ForeignKey("slots.id"), nullable=False)
+    dismissed_by = Column(UUID(as_uuid=False), ForeignKey("users.id"), nullable=False)
+>>>>>>> 8df9d12187793dd9f3eeda5aadd288ed11a34f98
     dismissed_at = Column(DateTime, default=datetime.utcnow)

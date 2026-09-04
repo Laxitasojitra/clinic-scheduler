@@ -1,5 +1,6 @@
 # Schema
 
+<<<<<<< HEAD
 ## Tables
 
 **users** — `id` (str/UUID PK), `email` (unique, indexed), `password_hash`, `full_name`, `role`
@@ -64,3 +65,12 @@ calculation runs 8 separate `COUNT` queries in a loop rather than one grouped qu
 be rewritten as a single query with a date-bucket `GROUP BY` at scale. SQLite itself (used for local
 dev) would not be appropriate at any real scale — it's explicitly local-dev-only here, Postgres is
 used for deployment.
+=======
+Answer each of these, in your own words.
+
+- Table by table: what columns and types does each one have?
+- Which relationships are one-to-many, and which are many-to-many?
+- Which constraints are enforced by the database, and which by application code — and why did you draw the line there?
+- What did you deliberately denormalise?
+- What would break first if this had 100x the data?
+>>>>>>> 8df9d12187793dd9f3eeda5aadd288ed11a34f98

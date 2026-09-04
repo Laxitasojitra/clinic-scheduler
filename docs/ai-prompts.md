@@ -1,5 +1,6 @@
 # AI prompts
 
+<<<<<<< HEAD
 I used Claude heavily for this assignment, especially in the final session under significant time
 pressure (submitted with ~2-3 hours left). Below is an honest account grouped by what I was trying
 to do. I did not write most of this code myself — I directed, reviewed, and tested it, and I'm
@@ -86,3 +87,18 @@ legal transition correctly logged to the audit timeline). I can explain the stat
 reason and no-show-only-after-scheduled-time), but I have not reviewed the frontend JavaScript in
 the same depth. That's a genuine gap in this submission and I'm recording it here rather than
 hiding it, per the brief's instructions.
+=======
+The prompts you actually used, in the order you used them, grouped by what you were trying to achieve. For each significant one: what you asked, what you got back, and what you had to correct.
+
+Include at least one prompt that produced something wrong, and what you did about it.
+
+If you did not use AI at all, say so here, and describe your process instead.
+
+## <What you were trying to achieve>
+
+### Prompt
+
+### What you got
+
+### What you corrected
+>>>>>>> 8df9d12187793dd9f3eeda5aadd288ed11a34f98

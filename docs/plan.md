@@ -1,5 +1,6 @@
 # Plan
 
+<<<<<<< HEAD
 ## How I broke the work into sessions, and what order
 
 1. **Session 1** — project scaffold, database schema (all tables up front, since the rest of the
@@ -36,3 +37,11 @@ goals, I cut a componentized/build-tooled frontend in favor of a single static p
 budget you actually used, and — separately — how much of that final rushed session's code you've
 personally read and could defend line-by-line versus accepted after black-box testing. Say so
 plainly; that's exactly what this document is for.
+=======
+Answer each of these, in your own words.
+
+- How did you break the work into sessions?
+- What order did you build in, and why that order?
+- What did you estimate versus what it actually took?
+- What did you cut when you ran short?
+>>>>>>> 8df9d12187793dd9f3eeda5aadd288ed11a34f98

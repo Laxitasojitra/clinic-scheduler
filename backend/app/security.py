@@ -1,5 +1,6 @@
 from datetime import datetime, timedelta
 
+<<<<<<< HEAD
 import bcrypt
 from jose import jwt, JWTError
 
@@ -12,6 +13,22 @@ def hash_password(password: str) -> str:
 
 def verify_password(plain: str, hashed: str) -> bool:
     return bcrypt.checkpw(plain.encode("utf-8"), hashed.encode("utf-8"))
+=======
+from jose import jwt, JWTError
+from passlib.context import CryptContext
+
+from app.config import settings
+
+pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
+
+
+def hash_password(password: str) -> str:
+    return pwd_context.hash(password)
+
+
+def verify_password(plain: str, hashed: str) -> bool:
+    return pwd_context.verify(plain, hashed)
+>>>>>>> 8df9d12187793dd9f3eeda5aadd288ed11a34f98
 
 
 def create_access_token(user_id: str, role: str) -> str:
